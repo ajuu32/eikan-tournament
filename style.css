@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Meiryo", sans-serif;
+    background: #f2f4f7;
+    color: #333;
+}
+
+header {
+    background: #245c43;
+    color: white;
+    text-align: center;
+    padding: 24px 15px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    border: none;
+    background: #e5e9e7;
+    color: #333;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #245c43;
+    color: white;
+}
+
+main {
+    width: min(100% - 30px, 1000px);
+    margin: 25px auto;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h2 {
+    margin-top: 28px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #245c43;
+    font-size: 21px;
+}
+
+.match-form {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000010;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: white;
+}
+
+.score-area {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+}
+
+.score-area div {
+    flex: 1;
+}
+
+.score-area span {
+    padding-bottom: 12px;
+    font-weight: bold;
+}
+
+.save-button {
+    margin-top: 15px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #245c43;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background: #194630;
+}
+
+#standings,
+#championship,
+#lastPlace,
+#finalStandings,
+#teamSettings,
+#matchHistory {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000010;
+    overflow-x: auto;
+}
+
+#teamSettings input {
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #e8eee9;
+    font-weight: bold;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.match-record {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.8;
+}
+
+.match-record:last-child {
+    border-bottom: none;
+}
+
+.input-note {
+    margin: -4px 0 4px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.home-run-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-run-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 110px 72px;
+    align-items: end;
+    gap: 8px;
+    padding: 12px;
+    background: #f6f8f6;
+    border: 1px solid #e0e6e1;
+    border-radius: 8px;
+}
+
+.home-run-row label {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 13px;
+}
+
+.home-run-row input {
+    min-width: 0;
+}
+
+.remove-home-run-button {
+    min-height: 42px;
+    border: 1px solid #c9d2cc;
+    border-radius: 6px;
+    background: white;
+    color: #8b2929;
+    font-size: 13px;
+}
+
+.add-home-run-button {
+    padding: 10px;
+    border: 1px solid #245c43;
+    border-radius: 7px;
+    background: white;
+    color: #245c43;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #72a98b;
+    outline-offset: 2px;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    .tab {
+        flex: 1;
+        padding: 12px 8px;
+    }
+
+    .score-area {
+        gap: 8px;
+    }
+
+    main {
+        width: calc(100% - 20px);
+    }
+
+    .home-run-row {
+        grid-template-columns: minmax(0, 1fr) 88px 64px;
+        gap: 6px;
+        padding: 9px;
+    }
+
+    .remove-home-run-button {
+        font-size: 12px;
+    }
+}
